@@ -43,3 +43,11 @@ app.listen(3000, () => {
 });
 
 ```
+This sets up a basic Express.js app and initializes the Stripe library with your Stripe secret key.
+
+# Step 4: Create a Payment Form
+
+To accept payments, you'll need to create a payment form. </br>
+Here's an example of a simple payment form that you can add to your **`app.js`** file:</br>
+
+
