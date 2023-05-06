@@ -89,6 +89,18 @@ This creates a payment form with fields for the payment amount, card number, exp
 Next, you'll need to handle payments with Stripe.</br>
 Here's an example of how you can handle payments using the `charge` endpoint in **Express.js**:</br>
 
+```
+app.post('/charge', async (req, res) => {
+  const amount = req.body.amount;
+  const cardNumber = req.body.card_number;
+  const expMonth = req.body.exp_month;
+  const expYear = req.body.exp_year;
+  const cvc = req.body.cvc;
+
+  try {
+    const paymentIntent = await stripe.payment
+```
+
 
 
 
