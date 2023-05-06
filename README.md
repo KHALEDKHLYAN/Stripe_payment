@@ -84,6 +84,11 @@ app.get('/payment', (req, res) => {
 ```
 This creates a payment form with fields for the payment amount, card number, expiration date, and CVC.
 
+# Step 5: Handle Payments with Stripe
+
+Next, you'll need to handle payments with Stripe.</br>
+Here's an example of how you can handle payments using the `charge` endpoint in **Express.js**:</br>
+
 
 
 
