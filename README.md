@@ -50,4 +50,40 @@ This sets up a basic Express.js app and initializes the Stripe library with your
 To accept payments, you'll need to create a payment form. </br>
 Here's an example of a simple payment form that you can add to your **`app.js`** file:</br>
 
+```
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.get('/payment', (req, res) => {
+  res.send(`
+    <form action="/charge" method="post">
+      <div>
+        <label>Amount:</label>
+        <input type="text" name="amount" placeholder="Enter amount in USD">
+      </div>
+      <div>
+        <label>Card Number:</label>
+        <input type="text" name="card_number" placeholder="Enter card number">
+      </div>
+      <div>
+        <label>Expiration Date:</label>
+        <input type="text" name="exp_month" placeholder="MM">
+        <input type="text" name="exp_year" placeholder="YYYY">
+      </div>
+      <div>
+        <label>CVC:</label>
+        <input type="text" name="cvc" placeholder="Enter CVC">
+      </div>
+      <button type="submit">Pay</button>
+    </form>
+  `);
+});
+
+```
+This creates a payment form with fields for the payment amount, card number, expiration date, and CVC.
+
+
+
 
