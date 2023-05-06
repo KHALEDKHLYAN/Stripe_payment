@@ -28,3 +28,18 @@ running the following command in your project's root directory:</br>
 ```
 npm init -y
 ```
+Next, create a new file called app.js and add the following code
+```
+const express = require('express');
+const app = express();
+const stripe = require('stripe')('<your_stripe_secret_key>');
+
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
+});
+
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
+
+```
